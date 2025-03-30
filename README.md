@@ -52,21 +52,21 @@ EJEMPLO
 
 Si queremos ver todos los usuarios registrados, usamos el método GET. En Postman, pondríamos lo siguiente:
 
--Método: GET
+- Método: GET
 
--URL: http://localhost:8080/api/usuarios
+- URL: http://localhost:8080/api/usuarios
 
--No hay que escribir nada en el cuerpo.
+- No hay que escribir nada en el cuerpo.
 
 Al darle a “Send”, nos devolverá una lista de usuarios en formato JSON. Si aún no hay ninguno, devolverá una lista vacía ([]).
 
 Si queremos añadir un nuevo usuario, hacemos una petición POST. Por ejemplo,queremos registrar a un usuario llamado Álvaro que tiene 20 años, vive en Madrid, con código postal 28001, DNI 12345678Z y su correo es alvaro@email.com.
 
--Método: POST
+- Método: POST
 
--URL: http://localhost:8080/api/usuarios
+- URL: http://localhost:8080/api/usuarios
 
--Escribimos esto en el cuerpo:
+- Escribimos esto en el cuerpo:
 
 {
   "nombre": "Álvaro",
@@ -81,11 +81,11 @@ Cuando pulsamos “Send”, la API responderá con el mismo usuario, pero ya con
 
 Si queremos modificar ese usuario usamos el método PUT indicando su ID.
 
--Método: PUT
+- Método: PUT
 
--URL: http://localhost:8080/api/usuarios/1
+- URL: http://localhost:8080/api/usuarios/1
 
--En el cuerpo JSON ponemos los datos actualizados, así:
+- En el cuerpo JSON ponemos los datos actualizados, así:
 
 {
   "nombre": "Álvaro Modificado",
