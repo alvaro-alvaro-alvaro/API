@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Página 3</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Página 3</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="pagina1.html">Página 1</a></li>
+                <li><a href="pagina2.html">Página 2</a></li>
+                <li><a href="pagina3.html">Página 3</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Create una cuenta</h2>
+        <p>¡Regístrate para seguir la liga!</p>
+
+        <form id="formulario-usuario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre"><br><br>
+
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad"><br><br>
+
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad"><br><br>
+
+            <label for="codigoPostal">Código Postal:</label>
+            <input type="text" id="codigoPostal" name="codigoPostal"><br><br>
+
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" name="dni"><br><br>
+
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" name="correo"><br><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+
+    <script>
+        document.getElementById('formulario-usuario').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const usuario = {
+                nombre: document.getElementById('nombre').value,
+                edad: parseInt(document.getElementById('edad').value),
+                ciudad: document.getElementById('ciudad').value,
+                codigoPostal: document.getElementById('codigoPostal').value,
+                dni: document.getElementById('dni').value,
+                correo: document.getElementById('correo').value
+            };
+
+            fetch('http://localhost:8080/api/usuarios', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(usuario)
+            })
+            .then(response => {
+                if (!response.ok) throw new Error("Error al guardar usuario");
+                return response.json();
+            })
+            .then(data => {
+                alert("Usuario guardado correctamente con ID: " + data.id);
+            })
+            .catch(error => {
+                alert("Ocurrió un error: " + error.message);
+            });
+        });
+    </script>
+</body>
+</html>
+
