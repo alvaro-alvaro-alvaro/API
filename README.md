@@ -47,3 +47,53 @@ Finalmente, con el método DELETE y la ruta /api/usuarios/{id}, se puede elimina
 
 Cada una de estas rutas responde con distintos códigos según el resultado de la operación, como 200 OK si todo ha salido bien, 201 Created si se ha creado un recurso correctamente, o 404 Not Found si el usuario no existe.
 
+
+EJEMPLO
+
+Si queremos ver todos los usuarios registrados, usamos el método GET. En Postman, pondríamos lo siguiente:
+
+-Método: GET
+
+-URL: http://localhost:8080/api/usuarios
+
+-No hay que escribir nada en el cuerpo.
+
+Al darle a “Send”, nos devolverá una lista de usuarios en formato JSON. Si aún no hay ninguno, devolverá una lista vacía ([]).
+
+Si queremos añadir un nuevo usuario, hacemos una petición POST. Por ejemplo,queremos registrar a un usuario llamado Álvaro que tiene 20 años, vive en Madrid, con código postal 28001, DNI 12345678Z y su correo es alvaro@email.com.
+
+-Método: POST
+
+-URL: http://localhost:8080/api/usuarios
+
+-Escribimos esto en el cuerpo:
+
+{
+  "nombre": "Álvaro",
+  "edad": 20,
+  "ciudad": "Madrid",
+  "codigoPostal": "28001",
+  "dni": "12345678Z",
+  "correo": "alvaro@email.com"
+}
+
+Cuando pulsamos “Send”, la API responderá con el mismo usuario, pero ya con un campo id añadido automáticamente.
+
+Si queremos modificar ese usuario usamos el método PUT indicando su ID.
+
+-Método: PUT
+
+-URL: http://localhost:8080/api/usuarios/1
+
+-En el cuerpo JSON ponemos los datos actualizados, así:
+
+{
+  "nombre": "Álvaro Modificado",
+  "edad": 21,
+  "ciudad": "Barcelona",
+  "codigoPostal": "08001",
+  "dni": "98765432A",
+  "correo": "nuevo@email.com"
+}
+
+La respuesta será el usuario actualizado, con los nuevos valores y el mismo ID.
