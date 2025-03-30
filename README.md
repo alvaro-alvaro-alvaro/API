@@ -18,6 +18,14 @@ En la práctica anterior, desarrollé una web compuesta por varias páginas:
 
 La API REST desarrollada en esta práctica esta relacionada con dicha web, permite realizar operaciones sobre los datos que los usuarios introducirían en el formulario.
 
+Este repositorio contiene dos carpetas principales:
+
+- alvaro/
+Es un proyecto desarrollado con Spring Boot. Contiene la API REST con las operaciones de creación, lectura, actualización y eliminación (CRUD).  
+
+- p2-main/p2-main/
+Contiene la página web de la práctica 2, incluyendo pagina3.html que está conectada con la API REST mediante JavaScript (`fetch`).  
+
 La API REST permite realizar las 4 operaciones básicas (CRUD) sobre los registros de usuarios:
 
 - Crear un usuario nuevo (POST)
