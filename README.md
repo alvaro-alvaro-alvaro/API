@@ -70,10 +70,15 @@ Si queremos añadir un nuevo usuario, hacemos una petición POST. Por ejemplo,qu
 
 {
   "nombre": "Álvaro",
+  
   "edad": 20,
+  
   "ciudad": "Madrid",
+  
   "codigoPostal": "28001",
-  "dni": "12345678Z",
+  
+  "dni": "65783412P",
+  
   "correo": "alvaro@email.com"
 }
 
@@ -89,10 +94,15 @@ Si queremos modificar ese usuario usamos el método PUT indicando su ID.
 
 {
   "nombre": "Álvaro Modificado",
+  
   "edad": 21,
+  
   "ciudad": "Barcelona",
+  
   "codigoPostal": "08001",
+  
   "dni": "98765432A",
+  
   "correo": "nuevo@email.com"
 }
 
